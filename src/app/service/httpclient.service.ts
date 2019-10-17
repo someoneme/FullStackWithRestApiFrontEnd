@@ -19,15 +19,15 @@ export class HttpclientService {
   getEmployees()
   {
     console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+    return this.httpClient.get<Employee[]>('https://full-stack-rest-api.herokuapp.com/employees');
   }
 
   public deleteEmployee(employee){
-    return this.httpClient.delete<Employee>("http://localhost:8080/employee" + "/"+ employee.empId);
+    return this.httpClient.delete<Employee>("https://full-stack-rest-api.herokuapp.com/employee" + "/"+ employee.empId);
   }
 
   public createEmployee(employee){
-    return this.httpClient.put<Employee>('http://localhost:8080/employee/'+employee.empId,employee);
+    return this.httpClient.put<Employee>('https://full-stack-rest-api.herokuapp.com/employee/'+employee.empId,employee);
   }
 
 }
